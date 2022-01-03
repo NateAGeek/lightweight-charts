@@ -112,6 +112,7 @@ export class TimeScaleApi implements ITimeScaleApi, IDestroyable {
 	}
 
 	public fitContent(): void {
+		console.log(this._model);
 		this._model.fitContent();
 	}
 

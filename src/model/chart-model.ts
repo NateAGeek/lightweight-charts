@@ -680,6 +680,7 @@ export class ChartModel implements IDestroyable {
 
 	public recalculateAllPanes(): void {
 		this._watermark.updateAllViews();
+		console.log("Chart Panes", this._panes);
 		this._panes.forEach((p: Pane) => p.recalculate());
 		this.updateCrosshair();
 	}

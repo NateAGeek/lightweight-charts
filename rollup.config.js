@@ -23,6 +23,7 @@ function getConfig(inputFile, type, isProd) {
 	const config = {
 		input: inputFile,
 		output: {
+			sourcemap: 'inline',
 			format: isModular ? 'esm' : 'iife',
 			file: `./dist/lightweight-charts.${suffix}.${mode}.js`,
 			banner: `

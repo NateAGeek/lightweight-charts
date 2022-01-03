@@ -252,6 +252,7 @@ export class Pane implements IDestroyable {
 
 	public updateAllSources(): void {
 		this._dataSources.forEach((source: IPriceDataSource) => {
+			console.log("Source View", source);
 			source.updateAllViews();
 		});
 	}
@@ -311,8 +312,12 @@ export class Pane implements IDestroyable {
 		this.recalculatePriceScale(this._leftPriceScale);
 		this.recalculatePriceScale(this._rightPriceScale);
 
+		console.log("Left Price Scale", this._leftPriceScale);
+		console.log("Right Price Scale", this._rightPriceScale);
+
 		this._dataSources.forEach((ds: IPriceDataSource) => {
 			if (this.isOverlay(ds)) {
+				console.log("DataSource Overlay", ds);
 				this.recalculatePriceScale(ds.priceScale());
 			}
 		});
